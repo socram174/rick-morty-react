@@ -15,7 +15,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 export default function App() {
   const [datos, setDatos] = useState([]);
   const [colorB, setColor] = useState([]);
-  console.log(Math.floor(Math.random() * 10) + 1);
+  //console.log(Math.floor(Math.random() * 10) + 1);
   const [num, setNum] = useState(292);
 
   useEffect(() => {
@@ -52,8 +52,7 @@ export default function App() {
         )}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {datos.species}
           </Typography>
         </CardContent>
       </CardActionArea>
