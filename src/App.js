@@ -57,8 +57,11 @@ export default function App() {
         </CardContent>
       </CardActionArea>
     </Card>
-  </Grid>
-  <Button
+    </Grid>
+
+
+      <Grid display="flex" justifyContent="center" alignItems="center">
+      <Button
         onClick={() => {
           setNum(Math.floor(Math.random() * 500) + 1);
         }}
@@ -67,6 +70,7 @@ export default function App() {
       >
         <PersonIcon /> Random Character
       </Button>
+        </Grid>
     </div>
   );
 }
