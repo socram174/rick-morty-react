@@ -10,6 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
 
 export default function App() {
   const [datos, setDatos] = useState([]);
@@ -31,30 +32,11 @@ export default function App() {
       });
   }, [num]);
   return (
-    <div style={{ border: colorB }}>
+    <div >
       <h1>Rick & Morty API</h1>
-      <h2>
-        {datos.name} /{' '}
-        {datos.status === 'Alive' ? (
-          <Chip label={datos.status} color="success" size="small" />
-        ) : (
-          <Chip label={datos.status} color="error" size="small" />
-        )}
-      </h2>
 
-      <img src={datos.image} />
-
-      <Button
-        onClick={() => {
-          setNum(Math.floor(Math.random() * 500) + 1);
-        }}
-        variant="contained"
-        color="success"
-      >
-        <PersonIcon /> Random Character
-      </Button>
-
-      <Card sx={{ maxWidth: 345 }}>
+    <Grid display="flex" justifyContent="center" alignItems="center">
+    <Card sx={{ maxWidth: 345 }} style={{ border: colorB }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -76,6 +58,16 @@ export default function App() {
         </CardContent>
       </CardActionArea>
     </Card>
+  </Grid>
+  <Button
+        onClick={() => {
+          setNum(Math.floor(Math.random() * 500) + 1);
+        }}
+        variant="contained"
+        color="success"
+      >
+        <PersonIcon /> Random Character
+      </Button>
     </div>
   );
 }
